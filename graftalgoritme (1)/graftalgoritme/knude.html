@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <script src="klasse graf.js"></script>
+    <script src="BFS.js"></script>
+    <script src="DFS.js"></script>
+    <!-- <script src="DFS.js"></script> -->
+    <script>
+        // her er hovedscriptet der kører programmet.
+        let V = 10;
+        let graf = new Graf(V)
+        
+        graf.tilføjKant(0, 1);
+        graf.tilføjKant(0, 2);
+        graf.tilføjKant(1, 3);
+        graf.tilføjKant(1, 4);
+        graf.tilføjKant(5, 3);
+        graf.tilføjKant(4, 3);
+        graf.tilføjKant(4, 8);
+        graf.tilføjKant(4, 2);
+        graf.tilføjKant(6, 9);
+        graf.tilføjKant(6, 7);
+        graf.tilføjKant(7, 9);
+        graf.tilføjKant(0, 7);
+
+        let bfs = new BFS(0, graf);
+
+        console.log(bfs.stiTil(8));
+
+        // const edges = [
+        //     [0, 1],
+        //     [0, 2],
+        //     [1, 3],
+        //     [1, 4],
+        //     [5, 3],
+        //     [4, 3]
+        // ];
+    
+        const ans = articulationPoints(V, graf.naboKnude);
+        console.log("Articulation points:", ans.join(" "));
+    </script>
+
+
+</head>
+
+<body>
+    <h1>graftalgoritme</h1>
+</body>
+
+</html>
